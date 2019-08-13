@@ -46,9 +46,11 @@ console.log('----------------',cleaned);
   console.log('=-=-=-=', uri2)
   priceFinder.findItemDetails(uri2, function(err, all2) {
 
-   priceArr.push(all2)
+  priceArr.push(all2)
   
-  
+axios.get(`https://www.amazon.com/s?k=${req.params.id}`)
+.then(data =>{
+
   res.json(priceArr)
 
 })
